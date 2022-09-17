@@ -1,40 +1,49 @@
 
-<p id="notice"></p>
-<h1>Books</h1>
+<!--<p id="notice"></p>-->
+<!--<h1>Books</h1>-->
 
-<table>
+<!--<table>-->
 
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Title</th>-->
+<!--      <th>Body</th>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
 
-  <tbody>
-    <tr>
-      <td><%= @book.title %></td>
-      <td><%= @book.body %></td>
-      <td>
-        <a class="" href="/books/show">Show</a>
-      </td>
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <a class="" href="/books/show">Show</a>-->
+<!--      </td>-->
 
-      <td>
-        <a class="" href="/books/:id/edit">Edit</a>
-      </td>
+<!--      <td>-->
+<!--        <a class="" href="/books/:id/edit">Edit</a>-->
+<!--      </td>-->
 
-      <td>
-        <a data-confirm="Are you sure?" class="" rel="nofollow" data-method="delete" href="/books/:id">
-          Destoroy
-        </a>
-      </td>
-    </tr>
-  </tbody>
+<!--      <td>-->
+<!--        <a data-confirm="Are you sure?" class="" rel="nofollow" data-method="delete" href="/books/:id">-->
+<!--          Destoroy-->
+<!--        </a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
 
-</table>
+<!--</table>-->
 
 
+<% @books.each do |book| %>
+  <h4>title</h4>
+  <%= book.title %>
+
+  <h4>body</h4>
+  <%= book.body %>
+
+  <%= link_to 'Show', book_path(book.id) %>
+  <%= link_to 'Edit', edit_book_path(book.id) %>
+  <%= link_to 'Destroy', book_path(book.id) %>
+<% end %>
 
 
 
